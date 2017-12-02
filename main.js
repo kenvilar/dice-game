@@ -8,3 +8,6 @@ dice = Math.floor((Math.random() * 6) + 1);
 
 // document.querySelector('#current-' + activePlayer).textContent = dice; //Select the element
 document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
+
+document.querySelector('#dice-1').style.display = 'none';
+document.querySelector('#dice-2').style.display = 'none';
