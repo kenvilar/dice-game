@@ -116,3 +116,13 @@ button:focus {
 .btn-hold {
 	top: 467px;
 }
+i {
+	color: #EB4D4D;
+	display: inline-block;
+	font-size: 32px;
+	line-height: 1;
+	margin-right: 15px;
+	margin-top: -4px;
+	transition: margin 0.3s;
+	vertical-align: text-top;
+}
