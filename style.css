@@ -9,16 +9,24 @@ body {
 	position: relative;
 }
 * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 .wrapper {
 	background-color: #fff;
+	-webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 	box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
 	left: 50%;
 	position: absolute;
 	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	overflow: hidden;
 	width: 1000px;
@@ -87,6 +95,10 @@ button {
 	position: absolute;
 	width: 200px;
 	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 	color: #555;
 	background: none;
@@ -96,6 +108,10 @@ button {
 	text-transform: uppercase;
 	cursor: pointer;
 	font-weight: 300;
+	-webkit-transition: background-color 0.3s, color 0.3s;
+	-moz-transition: background-color 0.3s, color 0.3s;
+	-ms-transition: background-color 0.3s, color 0.3s;
+	-o-transition: background-color 0.3s, color 0.3s;
 	transition: background-color 0.3s, color 0.3s;
 }
 button:hover {
@@ -123,10 +139,16 @@ i {
 	line-height: 1;
 	margin-right: 15px;
 	margin-top: -4px;
+	-webkit-transition: margin 0.3s;
+	-moz-transition: margin 0.3s;
+	-ms-transition: margin 0.3s;
+	-o-transition: margin 0.3s;
 	transition: margin 0.3s;
 	vertical-align: text-top;
 }
 .dice {
+	-webkit-box-shadow: 0 10px 60px rgba(0, 0, 0, 0.10);
+	-moz-box-shadow: 0 10px 60px rgba(0, 0, 0, 0.10);
 	box-shadow: 0 10px 60px rgba(0, 0, 0, 0.10);
 	height: 100px;
 	position: absolute;
@@ -141,6 +163,10 @@ i {
 .player-final-score {
 	position: absolute;
 	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
 	transform: translateX(-50%);
 	top: 520px;
 	color: #555;
