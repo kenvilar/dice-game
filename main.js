@@ -33,8 +33,18 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 		document.querySelector('#current-' + activePlayer).textContent = roundScore;
 	} else {
 		//Next player
-		document.querySelector('#current-' + activePlayer).textContent = '0';
+		document.getElementById('current-1').textContent = '0';
+		document.getElementById('current-2').textContent = '0';
+
+		roundScore = 0;
+
 		activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
+
+		document.querySelector('.player-1-panel').classList.toggle('active');
+		document.querySelector('.player-2-panel').classList.toggle('active');
+
+		document.querySelector('#dice-1').style.display = 'none';
+		document.querySelector('#dice-2').style.display = 'none';
 	}
 });
 
