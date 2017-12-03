@@ -58,6 +58,12 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 	}
 });
 
+document.querySelector('.btn-new-game').addEventListener('click', function () {
+	scores = [0, 0];
+	rolledScore = 0;
+	activePlayer = 1;
+});
+
 function nextPlayer() {
 	document.getElementById('current-1').textContent = '0';
 	document.getElementById('current-2').textContent = '0';
