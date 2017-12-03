@@ -31,7 +31,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 	document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer - 1];
 
 	//Check if the player won the game
-	if (scores[activePlayer - 1] >= 100) {
+	if (scores[activePlayer - 1] >= 10) {
 		//id="name-1"
 		document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
 
