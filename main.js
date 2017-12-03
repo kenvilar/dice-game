@@ -21,22 +21,19 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 		diceObj1.style.display = 'block';
 		diceObj2.style.display = 'block';
 
-		//Update round score if the rolled number is not 1
-		if (dice1 !== 1 && dice2 !== 1) {
-			if ((dice1 === 6 && lastRolledDice1 === 6) || (dice2 === 6 && lastRolledDice2 === 6)) {
-				// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
-				// Then it's the next player's turn
-				nextPlayer();
-			} else {
-				//Add score
-				rolledScore += dice1 + dice2;
-				document.querySelector('#current-' + activePlayer).textContent = rolledScore;
+		// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+		// Then it's the next player's turn
+		if ((dice1 === 6 && lastRolledDice1 === 6) || (dice2 === 6 && lastRolledDice2 === 6)) {
+			nextPlayer();
+		} else if (dice1 !== 1 && dice2 !== 1) {    //Update round score if the rolled number is not 1
+			//Add score
+			rolledScore += dice1 + dice2;
+			document.querySelector('#current-' + activePlayer).textContent = rolledScore;
 
-				// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
-				// Then it's the next player's turn
-				lastRolledDice1 = dice1;
-				lastRolledDice2 = dice2;
-			}
+			// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+			// Then it's the next player's turn
+			lastRolledDice1 = dice1;
+			lastRolledDice2 = dice2;
 		} else {
 			nextPlayer();
 		}
