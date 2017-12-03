@@ -1,7 +1,7 @@
-var scores, roundScore, activePlayer;
+var scores, rolledScore, activePlayer;
 
 scores = [0, 0]; // Player 1 and Player 2
-roundScore = 0; // Initial Score for round score
+rolledScore = 0; // Initial Score for rolled score
 activePlayer = 1; // Current active player
 
 document.querySelector('#name-1').textContent = 'PLAYER 1';
@@ -29,14 +29,14 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	//Update round score if the rolled number is not 1
 	if (dice !== 1) {
 		//Add score
-		roundScore = roundScore + dice;
-		document.querySelector('#current-' + activePlayer).textContent = roundScore;
+		rolledScore = rolledScore + dice;
+		document.querySelector('#current-' + activePlayer).textContent = rolledScore;
 	} else {
 		//Next player
 		document.getElementById('current-1').textContent = '0';
 		document.getElementById('current-2').textContent = '0';
 
-		roundScore = 0;
+		rolledScore = 0;
 
 		activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
 
@@ -46,6 +46,11 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 		document.querySelector('#dice-1').style.display = 'none';
 		document.querySelector('#dice-2').style.display = 'none';
 	}
+});
+
+document.querySelector('.btn-hold').addEventListener('click', function () {
+	//Add player current rolled score to his/her main score
+	scores[activePlayer] = scores[activePlayer] = rolledScore;
 });
 
 
