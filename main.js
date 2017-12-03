@@ -5,19 +5,23 @@ reset();
 document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	if (isGameActive) {
 		//Random number
-		var dice = Math.floor((Math.random() * 6) + 1);
+		var dice1 = Math.floor((Math.random() * 6) + 1);
+		var dice2 = Math.floor((Math.random() * 6) + 1);
 
 		//Display result
-		var diceObj = document.querySelector('.dice');
+		var diceObj1 = document.querySelector('#dice-1');
+		var diceObj2 = document.querySelector('#dice-2');
 
-		diceObj.style.display = 'block';
+		diceObj1.style.display = 'block';
+		diceObj2.style.display = 'block';
 
-		diceObj.src = 'dice' + dice + '.png';
+		diceObj1.src = 'dice' + dice1 + '.png';
+		diceObj2.src = 'dice' + dice2 + '.png';
 
 		//Update round score if the rolled number is not 1
-		if (dice !== 1) {
+		if (dice1 !== 1 && dice2 !== 1) {
 			//Add score
-			rolledScore += dice;
+			rolledScore += dice1 + dice2;
 			document.querySelector('#current-' + activePlayer).textContent = rolledScore;
 		} else {
 			nextPlayer();
@@ -63,7 +67,8 @@ function nextPlayer() {
 	document.querySelector('.player-1-panel').classList.toggle('active');
 	document.querySelector('.player-2-panel').classList.toggle('active');
 
-	document.querySelector('.dice').style.display = 'none';
+	document.querySelector('#dice-1').style.display = 'none';
+	document.querySelector('#dice-2').style.display = 'none';
 }
 
 function reset() {
