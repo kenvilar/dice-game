@@ -89,8 +89,7 @@ function nextPlayer() {
 
 	// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
 	// Then it's the next player's turn
-	lastRolledDice1 = 0;
-	lastRolledDice2 = 0;
+	lastRolledDice1 = lastRolledDice2 = 0;
 
 	activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
 
@@ -110,8 +109,7 @@ function reset() {
 
 	// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
 	// Then it's the next player's turn
-	lastRolledDice1 = 0;
-	lastRolledDice2 = 0;
+	lastRolledDice1 = lastRolledDice2 = 0;
 
 	document.querySelector('#name-1').textContent = 'PLAYER 1';
 	document.querySelector('#name-2').textContent = 'PLAYER 2';
