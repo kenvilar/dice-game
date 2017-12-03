@@ -49,8 +49,9 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 });
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
-	//Add player current rolled score to his/her main score
-	scores[activePlayer - 1] = scores[activePlayer - 1] = rolledScore;
+	scores[activePlayer - 1] = scores[activePlayer - 1] + rolledScore;
+
+	document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer - 1];
 });
 
 
