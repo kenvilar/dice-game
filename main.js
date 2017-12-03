@@ -58,7 +58,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 		if (init_final_score) {
 			final_score = init_final_score;
 		} else {
-			final_score = 20;
+			final_score = 100;
 		}
 
 		//Check if the player won the game
