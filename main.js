@@ -1,19 +1,6 @@
 var scores, rolledScore, activePlayer;
 
-scores = [0, 0]; // Player 1 and Player 2
-rolledScore = 0; // Initial Score for rolled score
-activePlayer = 1; // Current active player
-
-document.querySelector('#name-1').textContent = 'PLAYER 1';
-document.querySelector('#name-2').textContent = 'PLAYER 2';
-
-document.querySelector('#dice-1').style.display = 'none';
-document.querySelector('#dice-2').style.display = 'none';
-
-document.getElementById('score-1').textContent = '0';
-document.getElementById('score-2').textContent = '0';
-document.getElementById('current-1').textContent = '0';
-document.getElementById('current-2').textContent = '0';
+reset();
 
 document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	//Random number
@@ -58,11 +45,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 	}
 });
 
-document.querySelector('.btn-new-game').addEventListener('click', function () {
-	scores = [0, 0];
-	rolledScore = 0;
-	activePlayer = 1;
-});
+document.querySelector('.btn-new-game').addEventListener('click', reset);
 
 function nextPlayer() {
 	document.getElementById('current-1').textContent = '0';
@@ -77,6 +60,23 @@ function nextPlayer() {
 
 	document.querySelector('#dice-1').style.display = 'none';
 	document.querySelector('#dice-2').style.display = 'none';
+}
+
+function reset() {
+	scores = [0, 0];
+	rolledScore = 0;
+	activePlayer = 1;
+
+	document.querySelector('#name-1').textContent = 'PLAYER 1';
+	document.querySelector('#name-2').textContent = 'PLAYER 2';
+
+	document.querySelector('#dice-1').style.display = 'none';
+	document.querySelector('#dice-2').style.display = 'none';
+
+	document.getElementById('score-1').textContent = '0';
+	document.getElementById('score-2').textContent = '0';
+	document.getElementById('current-1').textContent = '0';
+	document.getElementById('current-2').textContent = '0';
 }
 
 
