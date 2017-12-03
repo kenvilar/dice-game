@@ -50,7 +50,7 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 
 document.querySelector('.btn-hold').addEventListener('click', function () {
 	//Add player current rolled score to his/her main score
-	scores[activePlayer] = scores[activePlayer] = rolledScore;
+	scores[activePlayer - 1] = scores[activePlayer - 1] = rolledScore;
 });
 
 
