@@ -34,11 +34,7 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	} else {
 		//Next player
 		document.querySelector('#current-' + activePlayer).textContent = '0';
-		if (activePlayer === 1) {
-			activePlayer = 2;
-		} else {
-			activePlayer = 1;
-		}
+		activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
 	}
 });
 
