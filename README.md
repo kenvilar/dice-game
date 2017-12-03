@@ -10,7 +10,7 @@ A dice game using pure JavaScript
 
 ## Another rules
 * If the player rolls the two dices and one of them is equal to 1, all his/her current rolled scores will get lost and no results will be added to the main score. After that, it's the next player's turn
-* The player looses his/her rolled scores when he/she rolled two 6 in a row. Then it's the next player's turn
+* The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row. Then it's the next player's turn
 * The players can input a final score (optional) in a text field if they want a score of their own and not the default score, 100
 
 
