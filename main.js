@@ -51,8 +51,18 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 		//Update and display the player main score
 		document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer - 1];
 
+		//Get the value of customize final score from the input text field
+		var init_final_score, final_score;
+		init_final_score = document.querySelector('.player-final-score').value;
+
+		if (init_final_score) {
+			final_score = init_final_score;
+		} else {
+			final_score = 20;
+		}
+
 		//Check if the player won the game
-		if (scores[activePlayer - 1] >= 10) {
+		if (scores[activePlayer - 1] >= final_score) {
 			//id="name-1"
 			document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
 
