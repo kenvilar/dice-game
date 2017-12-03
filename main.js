@@ -8,14 +8,11 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 		var dice = Math.floor((Math.random() * 6) + 1);
 
 		//Display result
-		var diceObj1 = document.querySelector('#dice-1');
-		var diceObj2 = document.querySelector('#dice-2');
+		var diceObj = document.querySelector('.dice');
 
-		diceObj1.style.display = 'block';
-		diceObj2.style.display = 'block';
+		diceObj.style.display = 'block';
 
-		diceObj1.src = 'dice' + dice + '.png';
-		diceObj2.src = 'dice' + dice + '.png';
+		diceObj.src = 'dice' + dice + '.png';
 
 		//Update round score if the rolled number is not 1
 		if (dice !== 1) {
@@ -41,8 +38,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 			//id="name-1"
 			document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
 
-			document.querySelector('#dice-1').style.display = 'none';
-			document.querySelector('#dice-2').style.display = 'none';
+			document.querySelector('.dice').style.display = 'none';
 
 			document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
 			document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
@@ -67,8 +63,7 @@ function nextPlayer() {
 	document.querySelector('.player-1-panel').classList.toggle('active');
 	document.querySelector('.player-2-panel').classList.toggle('active');
 
-	document.querySelector('#dice-1').style.display = 'none';
-	document.querySelector('#dice-2').style.display = 'none';
+	document.querySelector('.dice').style.display = 'none';
 }
 
 function reset() {
@@ -97,8 +92,3 @@ function reset() {
 
 	document.querySelector('.player-' + activePlayer + '-panel').classList.add('active');
 }
-
-
-///////
-// document.querySelector('#current-' + activePlayer).textContent = dice; //Select the element
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>';
