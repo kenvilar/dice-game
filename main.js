@@ -1,10 +1,13 @@
 var scores, rolledScore, activePlayer, isGameActive;
 
+// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+// Then it's the next player's turn
+var lastRolledDice1, lastRolledDice2;
+
 reset();
 
 document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	if (isGameActive) {
-		//Random number
 		var dice1 = Math.floor((Math.random() * 6) + 1);
 		var dice2 = Math.floor((Math.random() * 6) + 1);
 
@@ -12,17 +15,28 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 		var diceObj1 = document.querySelector('#dice-1');
 		var diceObj2 = document.querySelector('#dice-2');
 
-		diceObj1.style.display = 'block';
-		diceObj2.style.display = 'block';
-
 		diceObj1.src = 'dice' + dice1 + '.png';
 		diceObj2.src = 'dice' + dice2 + '.png';
 
+		diceObj1.style.display = 'block';
+		diceObj2.style.display = 'block';
+
 		//Update round score if the rolled number is not 1
 		if (dice1 !== 1 && dice2 !== 1) {
-			//Add score
-			rolledScore += dice1 + dice2;
-			document.querySelector('#current-' + activePlayer).textContent = rolledScore;
+			if ((dice1 === 6 && lastRolledDice1 === 6) || (dice2 === 6 && lastRolledDice2 === 6)) {
+				// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+				// Then it's the next player's turn
+				nextPlayer();
+			} else {
+				//Add score
+				rolledScore += dice1 + dice2;
+				document.querySelector('#current-' + activePlayer).textContent = rolledScore;
+
+				// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+				// Then it's the next player's turn
+				lastRolledDice1 = dice1;
+				lastRolledDice2 = dice2;
+			}
 		} else {
 			nextPlayer();
 		}
@@ -63,6 +77,11 @@ function nextPlayer() {
 
 	rolledScore = 0;
 
+	// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+	// Then it's the next player's turn
+	lastRolledDice1 = 0;
+	lastRolledDice2 = 0;
+
 	activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
 
 	document.querySelector('.player-1-panel').classList.toggle('active');
@@ -78,6 +97,11 @@ function reset() {
 	activePlayer = 1;
 
 	isGameActive = true;
+
+	// The player looses his/her rolled scores if one of your two dices (or both of them) rolled two 6 in a row.
+	// Then it's the next player's turn
+	lastRolledDice1 = 0;
+	lastRolledDice2 = 0;
 
 	document.querySelector('#name-1').textContent = 'PLAYER 1';
 	document.querySelector('#name-2').textContent = 'PLAYER 2';
