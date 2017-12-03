@@ -77,6 +77,14 @@ function reset() {
 	document.getElementById('score-2').textContent = '0';
 	document.getElementById('current-1').textContent = '0';
 	document.getElementById('current-2').textContent = '0';
+
+	document.querySelector('.player-1-panel').classList.remove('winner');
+	document.querySelector('.player-2-panel').classList.remove('winner');
+
+	document.querySelector('.player-1-panel').classList.remove('active');
+	document.querySelector('.player-2-panel').classList.remove('active');
+
+	document.querySelector('.player-' + activePlayer + '-panel').classList.add('active');
 }
 
 
