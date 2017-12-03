@@ -1,5 +1,5 @@
 body {
-	background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(dice.png);
+	background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url('dice.png');
 	background-size: cover;
 	background-position: center;
 	color: #555;
@@ -185,4 +185,11 @@ i {
 }
 #dice-2 {
 	top: 250px;
+}
+.winner {
+	background-color: #f7f7f7;
+}
+.winner .player-name {
+	font-weight: bold;
+	color: #EB4D4D;
 }
