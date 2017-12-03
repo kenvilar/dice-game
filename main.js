@@ -7,8 +7,8 @@ activePlayer = 1; // Current active player
 document.querySelector('#name-1').textContent = 'PLAYER 1';
 document.querySelector('#name-2').textContent = 'PLAYER 2';
 
-document.querySelector('#dice-1').style.display = 'none'; //Initial hide the dice
-document.querySelector('#dice-2').style.display = 'none'; //Initial hide the dice
+document.querySelector('#dice-1').style.display = 'none';
+document.querySelector('#dice-2').style.display = 'none';
 
 document.getElementById('score-1').textContent = '0';
 document.getElementById('score-2').textContent = '0';
@@ -27,6 +27,19 @@ document.querySelector('.btn-roll-dice').addEventListener('click', function () {
 	diceObj2.src = 'dice' + dice + '.png';
 	/* TODO */
 	//Update round score if the rolled number is not 1
+	if (dice !== 1) {
+		//Add score
+		roundScore = roundScore + dice;
+		document.querySelector('#current-' + activePlayer).textContent = roundScore;
+	} else {
+		//Next player
+		document.querySelector('#current-' + activePlayer).textContent = '0';
+		if (activePlayer === 1) {
+			activePlayer = 2;
+		} else {
+			activePlayer = 1;
+		}
+	}
 });
 
 
