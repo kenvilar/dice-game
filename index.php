@@ -6,6 +6,16 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
 	<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
 	<link href="./style.css" rel="stylesheet" type="text/css">
+
+	<meta property="fb:admins" content="XXXXXXXXX-fb-admin-id"/>
+	<meta property="og:locale" content="en_US"/>
+	<meta property="og:title" content="Ken Vilar - Dice Game"/>
+	<meta property="og:description" content="A simple dice game using pure JavaScript"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:url" content="https://github.com/kenvilar/dice-game"/>
+	<meta property="og:image" content="https://raw.githubusercontent.com/kenvilar/dice-game/master/dice.png"/>
+	<meta property="og:image:width" content="200"/>
+	<meta property="og:image:height" content="200"/>
 </head>
 <body>
 
